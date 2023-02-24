@@ -4,22 +4,24 @@ import bgImg from '../assets/code.jpg'
 import React from 'react';
 import {useState} from 'react'
 import './home.css'
-
-const Home = (props) =>{
-
-    const [link, setLink] = useState(props.initialLink);
-
-    const handleClick = () => {
-        // Generate a new link
-        const newLink = generateLink();
+const Home = () =>{
     
-        // Update the state with the new link
-        setLink(newLink);
-      };
+    const roomId = `${window.location.href}room/${Math.floor(1000 + Math.random() * 9000)}`; // Replace with the actual room ID
+    const [link,setLink] = useState(roomId);
+
+
+
+    // const handleClick = () => {
+    //     // Generate a new link
+    //     const newLink = generateLink();
+        
+    //     // Update the state with the new link
+    //     setLink(newLink);
+    //   };
     
       const generateLink = () => {
         // Generate a random link (for example)
-        return `https://www.example.com/${Math.random().toString(36).substr(2, 5)}`;
+        setLink(`${window.location.href}room/${Math.floor(1000 + Math.random() * 9000)}`);
       };
 
     return(
@@ -32,7 +34,7 @@ const Home = (props) =>{
     
       <div className="box">
       <p className="text-white border-solid border-2 border-orange-50 p-5"><a href={link}>{link}</a></p>
-      <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={handleClick}>Generate New Link</button>
+      <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={generateLink}>Generate New Link</button>
     </div>
     </div>
         </>
