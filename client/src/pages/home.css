@@ -1,0 +1,29 @@
+.box p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.home-body {
+    background: linear-gradient(-45deg, #009dff, #0062ff, #0022ff,#00fffb);
+    background-size: 400% 400%;
+    animation: gradient;
+    animation-fill-mode: forwards;
+    animation-duration: 10s;
+    height:90vh;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+   
