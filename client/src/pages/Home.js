@@ -31,7 +31,7 @@ const Home = (props) =>{
       
     
       <div className="box">
-      <p className="text-white border-solid border-2 border-orange-50 p-5">Generated Link: <a href={link}>{link}</a></p>
+      <p className="text-white border-solid border-2 border-orange-50 p-5"><a href={link}>{link}</a></p>
       <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={handleClick}>Generate New Link</button>
     </div>
     </div>
