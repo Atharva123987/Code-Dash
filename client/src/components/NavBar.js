@@ -11,13 +11,13 @@ const NavBar = () =>{
         <div className="text-sm lg:flex-grow">
         </div>
         <div>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
-          <Link to={"/"}>Home</Link>
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            <Link to={"/about"}>About</Link>
+          
+          <Link to={"/"}><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Home</button></Link>
+          
+          
+            <Link to={"/about"}><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">About</button></Link>
             
-          </button>
+          
         </div>
       </div>
     </nav>
