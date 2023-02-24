@@ -5,9 +5,9 @@ import React from 'react';
 import {useState} from 'react'
 import './home.css'
 
-const Home = (props) =>{
-
-    const [link, setLink] = useState(props.initialLink);
+const Home = () =>{
+    
+    const [link, setLink] = useState("http://www.google.com");
 
     const handleClick = () => {
         // Generate a new link
