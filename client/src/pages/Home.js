@@ -9,7 +9,7 @@ const Home = () =>{
     const roomId = `${window.location.href}room/${Math.floor(1000 + Math.random() * 9000)}`; // Replace with the actual room ID
     const [link,setLink] = useState(roomId);
 
-
+    
 
     // const handleClick = () => {
     //     // Generate a new link
