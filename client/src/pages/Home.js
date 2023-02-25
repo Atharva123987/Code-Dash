@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import NavBar from '../components/NavBar'
 import bgImg from '../assets/code.jpg'
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useState} from 'react'
 import './home.css'
 import io from 'socket.io-client'
@@ -12,10 +12,10 @@ const Home = () =>{
   const [username, setUsername] = useState("")
   const [roomId, setRoomId] = useState("")
 
-  const joinRoom = () =>{
+  const joinRoom = (e) =>{
   socket.emit("join_room", [roomId,username]);// sending join_room request from front end to backend
   }
-
+  const [tempRoomId,setTempRoomId] = useState("")
   const generateRoomId = () =>{
     setRoomId(Math.floor(Math.random() * 9000) + 1000)
   }
@@ -37,6 +37,12 @@ const Home = () =>{
     //     setLink(`${window.location.href}room/${Math.floor(1000 + Math.random() * 9000)}`);
     //   };
 
+    useEffect(()=>{
+      socket.on("receive_room",(data)=>{
+        console.log(`Welcome ${data} to room ${data} `)
+      })  
+    },[socket])
+
     return(
         <>
         <NavBar/>
@@ -46,11 +52,11 @@ const Home = () =>{
       
     
       <div className="box">
-      <p className="text-white border-solid border-2 border-orange-50 p-5"><input maxLength={4}  type='text' value={roomId} style={{color:"black"}} onChange={(e)=>{setRoomId(e.target.value)}}/></p>
+      <p className="text-white border-solid border-2 border-orange-50 p-5"><input maxLength={4} name="username"  type='text' value={roomId} style={{color:"black"}} onChange={(e)=>setRoomId(e.target.value)}/></p>
       <p className="text-white border-solid border-2 border-orange-50 p-5"><input   type='text' value={username} style={{color:"black"}} onChange={(e)=>{setUsername(e.target.value)}}/></p>
       <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={generateRoomId}>Generate New Link</button>
-      <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={joinRoom}>Join</button>
-
+      <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={joinRoom()}>Join</button>
+      
       <GameRoom socket={socket} username={username} roomId={roomId}/>
 
     </div>

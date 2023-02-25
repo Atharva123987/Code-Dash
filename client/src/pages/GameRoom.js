@@ -8,6 +8,8 @@ function GameRoom({socket,username,roomId}) {
 	
 	const[code,setCode] = useState("This is the winners code")
 	
+	
+
 	const displayCode = () =>{
 		if(displayCode !== ""){
 			const codeData = {
@@ -22,8 +24,11 @@ function GameRoom({socket,username,roomId}) {
 	return (<>
 		
 		<Timer/>
+		<h1>This is room number{roomId}</h1>
 		<div className="bg-slate-900 flex">
+			
 			<div className="w-2/6">
+				
 				<Question />
 				<QuesBox/>
 			</div>
