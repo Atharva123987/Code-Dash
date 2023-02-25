@@ -23,7 +23,7 @@ function Timer() {
 
   return (
     <div>
-      <h2 style={{color:"white"}}>Timer: {`${minutes}:${seconds}`}</h2>
+      <h2 className='flex justify-center bg-teal-500 font-bold text-2xl'>Timer: {`${minutes}:${seconds}`}</h2>
     </div>
   );
 }

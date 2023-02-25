@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from './pages/About'
 import GameRoom from "./pages/GameRoom";
 import Discussion from "./pages/Discussion";
+import React, { useState } from "react";
 // import GameRoom from "./pages/GameRoom";
 
 const App = ()=> {
