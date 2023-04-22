@@ -4,8 +4,20 @@
   font-weight: bold;
 }
 
+.navbar{
+  background-color: #3C415C;
+  color:white;
+}
+
+.temp{
+ /* background-color: #301B3F; */
+  color:#B4A5A5;
+
+}
+
 .home-body {
-    background: linear-gradient(-45deg, #009dff, #0062ff, #0022ff,#00fffb);
+    /* background: linear-gradient(-45deg, #009f38, #009e44, #0b9395,#009e9b); */
+    background-color: #151515;
     background-size: 400% 400%;
     animation: gradient;
     animation-fill-mode: forwards;
