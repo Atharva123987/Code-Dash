@@ -56,12 +56,12 @@ const Home = () =>{
 <section class="home-body  body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12 temp">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Start Coding!</h1>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Start Coding! {'</>'} </h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
       Join a room or Create one!
       </p>
     </div>
-    <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+    <div class="flex  lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
       <button class="text-black bg-white border-0 py-2 px-8 focus:outline-none hover:bg-slate-300 transition-all active:bg-slate-600 active:text-white rounded text-lg">Sign in with Google</button>
       <button class="text-black bg-white border-0 py-2 px-8 focus:outline-none hover:bg-slate-300 transition-all active:bg-slate-600 active:text-white rounded text-lg">Sign in with GitHub</button>
       <div class="relative flex-grow w-full">
