@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import About from "../pages/About";
+import Logo from '../assets/CodeDashLogo.png'
 const NavBar = () =>{
     return(
         <>
         <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <img src={Logo} style={{height:"40px"}} alt='logo'/>
         <span className="font-semibold text-2xl tracking-tight">Code Dash</span>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">

@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import NavBar from '../components/NavBar'
-import bgImg from '../assets/code.jpg'
 import React, { useEffect } from 'react';
 import {useState} from 'react'
 import './home.css'
@@ -8,6 +6,7 @@ import io from 'socket.io-client'
 import GameRoom from "./GameRoom";
 
 const socket = io.connect("http://localhost:3001")
+
 const Home = () =>{
   const [username, setUsername] = useState("")
   const [roomId, setRoomId] = useState("")
@@ -29,23 +28,6 @@ const Home = () =>{
   const generateRoomId = () =>{
     setRoomId(Math.floor(Math.random() * 9000) + 1000)
   }
-    // const roomId = `${window.location.href}room/${Math.floor(1000 + Math.random() * 9000)}`; // Replace with the actual room ID
-    // const [link,setLink] = useState(roomId);
-
-    
-
-    // // const handleClick = () => {
-    // //     // Generate a new link
-    // //     const newLink = generateLink();
-        
-    // //     // Update the state with the new link
-    // //     setLink(newLink);
-    // //   };
-    
-    //   const generateLink = () => {
-    //     // Generate a random link (for example)
-    //     setLink(`${window.location.href}room/${Math.floor(1000 + Math.random() * 9000)}`);
-    //   };
 
     useEffect(()=>{
       socket.on("receive_room",(data)=>{
@@ -58,7 +40,6 @@ const Home = () =>{
         <NavBar/>
         {isVisible? 
     <div className="home-body flex flex-col items-center  ">
-      {/* <img src={bgImg} alt="Logo" style={{width:"110vh", }}/> */}
       <h1 className="text-4xl font-bold mb-4 mt-10 text-white">Welcome to Code Dash!</h1>
       
     
@@ -68,7 +49,6 @@ const Home = () =>{
       <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={generateRoomId}>Generate New Link</button>
       <button className=" px-8 py-2 rounded-lg bg-blue-700 text-white font-bold hover:bg-blue-600" onClick={handleClick}>Join</button>
 
-      {/* <GameRoom socket={socket} username={username} roomId={roomId}/> */}
 
     </div>
     </div>
